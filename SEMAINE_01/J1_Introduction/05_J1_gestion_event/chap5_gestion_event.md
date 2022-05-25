@@ -4,7 +4,7 @@ Attention les **événements** dans **React** (similaires aux événements du DO
 
 ```js
 {/* passage d'une méthode */}
-<button onClick={this.makeChoice}>
+<button onClick={makeChoice}>
   Your choice
 </button>
 ```
