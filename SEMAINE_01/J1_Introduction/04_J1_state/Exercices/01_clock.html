@@ -34,7 +34,15 @@
             setCount(count + 1);
         }
 
-        console.log(Math.random());
+        React.useEffect(() => {
+            console.log('count', count);
+
+        }, [count])
+
+        setTimeout(() => {
+                setCount(count + 1);
+            }, 1000)
+
 
         return(
             <div>
