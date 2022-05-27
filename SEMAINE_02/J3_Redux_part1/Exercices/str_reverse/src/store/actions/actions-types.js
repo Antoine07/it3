@@ -1,8 +1,8 @@
-import { REVERSE, SHUFFLE } from "../constants/actions";
+import { REVERSE, SET_COST, SHUFFLE } from "../constants/actions";
 
 export const reverse = () => ({ type: REVERSE });
 export const shuffle = payload => ({ type: SHUFFLE, payload });
-
+export const set_cost = payload => ({ type: SET_COST, payload });
 
 export function shuffle_str({ cost, phrase }) {
     let res = [];
