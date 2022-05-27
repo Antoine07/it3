@@ -1,4 +1,5 @@
-import { REVERSE } from "../constants/actions";
+import { shuffle_str } from "../actions/actions-types";
+import { REVERSE, SHUFFLE } from "../constants/actions";
 
 const stateInit = {
     count: 0,
@@ -11,10 +12,17 @@ const reducer = (state = stateInit, action = {}) => {
 
             return {
                 ...state,
-                count : state.count + 1,
+                count: state.count + 1,
                 phrase: state.phrase.split('').reverse().join('')
             };
 
+        case SHUFFLE:
+            const cost  = action.payload;
+
+            return {
+                ...state,
+                phrase: shuffle_str({ phrase: state.phrase, cost })
+            };
         default:
             return state;
     }
