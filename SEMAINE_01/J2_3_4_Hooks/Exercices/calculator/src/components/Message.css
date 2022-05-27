@@ -1,0 +1,11 @@
+.Message {
+  text-align: center;
+}
+
+.warning{
+  color:blue;
+}
+
+.danger {
+  color: red;
+}

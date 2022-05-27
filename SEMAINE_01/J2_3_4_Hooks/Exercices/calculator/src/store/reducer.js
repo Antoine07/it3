@@ -4,7 +4,11 @@ export const initialState = {
     number1: '',
     number2: '',
     resultat: null,
-    count: 0
+    count: 0,
+    message : {
+        type : "warning",
+        content : null
+    }
 };
 
 export const MULT = 'mult';
@@ -26,7 +30,11 @@ export const reducer = (state, action) => {
             if(isNaN(n1) || isNaN(n2)){
 
                 return {
-                    ...state
+                    ...state,
+                    message : { 
+                        ...state.message, 
+                        content : `Attention un des champs n'est pas un number`
+                    }
                 }
             }
 
@@ -34,7 +42,8 @@ export const reducer = (state, action) => {
                 ...state,
                 resultat : n1 + n2,
                 number1 : '',
-                number2 : ''
+                number2 : '',
+                message : { ...state.message, content : null }
             };
         case COUNT:
             return {
@@ -47,7 +56,8 @@ export const reducer = (state, action) => {
             return {
                 ...state,
                 [name]: number,
-                resultat : null
+                resultat : null,
+                message : { ...state.message, content : null}
             };
 
         default:

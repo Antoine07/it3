@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <title>Hello React</title>
     <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
@@ -10,50 +9,75 @@
     <!-- babel => compilation du JSX -->
     <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
     <style>
-        .heading {
-            color: purple;
-        }
+      .heading {
+        color: purple;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <div id="root"></div>
     <script type="text/babel">
-        
-        function Button(props){
+      const TIMER = 1000;
 
-            return(
-                <button onClick={}>Go</button>
-            )
+      function App() {
+        const [active, setActive] = React.useState(false);
+        const [count, setCount] = React.useState(10);
+        const [oldCount, setOldCount] = React.useState("");
+
+        function handleClick() {
+          setActive(!active);
         }
 
-        function App () {
-            const [active, setActive] = React.useState(false);
-            const [count, setCount] = React.useState(10);
+        React.useEffect(() => {
+            let timer ;
+          if (active && count >= 0)
+            timer = setTimeout(() => {
+              setCount(count - 1);
+            }, TIMER);
+          else {
+            setCount(10);
+            setActive(false);
+            clearTimeout(timer);
+          }
 
-            function handleClick(){
-                setActive(!active);
-            }
+          return () => {
+            // watch de la valeur précédente si elle change
+            setOldCount(count);
+            clearTimeout(timer);
+          };
+        }, [count, active]);
 
-            React.useEffect(() => {
-
-             
-            }, [count, active]);
-
-
-            return (
-                <div>
-                    {active === false && <Button handleClick={handleClick} />}
-                    <p>{count}</p>
-                </div>
-            )
-        }
-
-        ReactDOM.render(
-            <App />,
-            document.getElementById('root')
+        return (
+          <div>
+            {active === false && <button onClick={handleClick}> Go </button>}
+            <p>{count}</p>
+            <p>{oldCount}</p>
+          </div>
         );
-    </script>
-</body>
+      }
 
+      function Container() {
+        const [active, setActive] = React.useState(true);
+
+        function handleClick() {
+          setActive(!active);
+        }
+
+        if (active)
+          return (
+            <React.Fragment>
+              <App />
+              <p>
+                <button onClick={handleClick}>STOP</button>
+              </p>
+            </React.Fragment>
+          );
+
+        return <p>Terminated</p>;
+      }
+
+      ReactDOM.render(<Container />, document.getElementById("root"));
+    </script>
+  </body>
 </html>
