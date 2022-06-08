@@ -16,7 +16,7 @@ Vous devrez développer une petite interface permettant de saisir le montant et 
 
 Le squelette d'application fait à l'aide de la CRA. Respectez l'organisation déjà vu en cours pour la mise en place de Redux dans React.
 
-Utilisez styled-components et créez les composants suivants : Button et Input, que vous utiliserez dans le le composant Denomination. Voyez ci-dessous la structure de l'application que l'on souhaite mettre en place.
+Utilisez, si vous le souhaitez (facultatif) styled-components et créez les composants suivants : Button et Input, que vous utiliserez dans le le composant Denomination. Voyez ci-dessous la structure de l'application que l'on souhaite mettre en place.
 
 ```text
 components/
