@@ -1,4 +1,4 @@
-# Challenge dénomination
+# Evaluation dénomination
 
 Vous allez créer une petite application qui permet de saisir un montant donné et qui fournit la monnaie en token(s) que l'on peut rendre par rapport à ce montant.
 
