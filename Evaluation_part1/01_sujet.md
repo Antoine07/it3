@@ -47,7 +47,7 @@ Dénomination 1 unité(s) : 3
 
 ```
 
-## Partie 2 (facultative)
+## Partie 2 15%
 
 Pour cette partie vous devez vous aider du support de cours qui correspond au router : Support_router.
 
