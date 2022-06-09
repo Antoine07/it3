@@ -2,8 +2,12 @@
 
 ## Installation de la dépendance
 
+Attention nouvelle version de React Router v6
+
+[v6 router](https://reactrouter.com/docs/en/v6/getting-started/overview)
+
 ```bash
-npm i react-router-dom
+npm install react-router-dom@6
 
 ```
 

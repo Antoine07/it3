@@ -1,8 +1,6 @@
-# Challenge dénomination
+# Evaluation dénomination
 
 Vous allez créer une petite application qui permet de saisir un montant donné et qui fournit la monnaie en token(s) que l'on peut rendre par rapport à ce montant.
-
-Vous vous aiderez de la documentation officielle pour réaliser ce TP : [React Native](https://facebook.github.io/react-native/docs/getting-started)
 
 Voici les dénominations, c'est-à-dire les tokens que l'on pourra rendre en fonction d'un montant donné :
 
@@ -18,7 +16,7 @@ Vous devrez développer une petite interface permettant de saisir le montant et 
 
 Le squelette d'application fait à l'aide de la CRA. Respectez l'organisation déjà vu en cours pour la mise en place de Redux dans React.
 
-Utilisez styled-components et créez les composants suivants : Button et Input, que vous utiliserez dans le le composant Denomination. Voyez ci-dessous la structure de l'application que l'on souhaite mettre en place.
+Utilisez, si vous le souhaitez (facultatif) styled-components et créez les composants suivants : Button et Input, que vous utiliserez dans le le composant Denomination. Voyez ci-dessous la structure de l'application que l'on souhaite mettre en place.
 
 ```text
 components/
@@ -49,7 +47,7 @@ Dénomination 1 unité(s) : 3
 
 ```
 
-## Partie 2 (facultative)
+## Partie 2 15%
 
 Pour cette partie vous devez vous aider du support de cours qui correspond au router : Support_router.
 
