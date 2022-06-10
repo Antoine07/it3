@@ -12,6 +12,7 @@ export default function Home() {
         dispatch(set_choice(choice));
     }
 
+    console.log(choicesM);
 
     if (count < max) {
 

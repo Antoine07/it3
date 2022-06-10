@@ -1,11 +1,12 @@
 import { StyleSheet, View } from 'react-native';
 
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import Home from './components/Home';
 import rootReducer from './store/reducers/index';
+import middlewareMemory from './store/middlewares/memory';
 
-const store = createStore(rootReducer)
+const store = createStore(rootReducer, applyMiddleware(middlewareMemory))
 
 export default function App() {
   return (
